@@ -67,6 +67,8 @@ if(USE_SDL2)
         message(STATUS "Using shared SDL Version 2 for Commander Genius")
         include_directories(${SDL2_INCLUDE_DIR})
         include_directories(${SDL2_IMAGE_INCLUDE_DIR})
+
+        include_directories(/opt/gcw0-toolchain/usr/mipsel-gcw0-linux-uclibc/sysroot/usr/include/SDL2/)
     endif(SDL2_FOUND)
 
 else(USE_SDL2)
