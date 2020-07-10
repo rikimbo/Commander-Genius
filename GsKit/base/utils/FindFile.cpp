@@ -500,7 +500,9 @@ void InitBaseSearchPaths()
 	AddToFileList(&basesearchpaths, "/switch/CommanderGenius");
 	AddToFileList(&basesearchpaths, "romfs:/");
 #else // all other systems (Linux, *BSD, OS/2, ...)
-#ifdef ANDROID
+#if defined(DINGOO)
+	AddToFileList(&basesearchpaths, "/media/data/local/home/.CommanderGenius");
+#elif defined(ANDROID)
 	//AddToFileList(&basesearchpaths, "${HOME}/SaveData");
     AddToFileList(&basesearchpaths, SDL_AndroidGetExternalStoragePath());
     AddToFileList(&basesearchpaths, SDL_AndroidGetInternalStoragePath());
